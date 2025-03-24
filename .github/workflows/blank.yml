@@ -32,7 +32,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: files.${{ github.ref }}
+          name: files
           path: ./song.txt
 
       # Runs a set of commands using the runners shell
@@ -43,5 +43,5 @@ jobs:
           echo test, and deploy your project.
           curl -X POST \
           -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
-          -d '{"ref": "fix", "client_payload": {"artifact_name": "files.${{ github.ref }}", "branch": "${{ github.ref }}" }}' \
+          -d '{"ref": "fix", "client_payload": {"artifact_name": "files", "branch": "${{ github.ref }}" }}' \
           https://api.github.com/repos/projecttrails/trails-deploy/actions/workflows/deploy_api.yml/dispatches
