@@ -41,7 +41,7 @@ jobs:
           curl -X POST \
           -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
           -H "Accept: application/vnd.github.v3+json" \
-          -d '{"tag_name": "latest-build", "name": "Latest ${{ github.ref }}", "draft": false, "prerelease": false}' \
+          -d '{"tag_name": "latest-build", "name": "Latest build", "draft": false, "prerelease": false}' \
           https://api.github.com/repos/projecttrails/trails-deploy/releases
 
       - name: Upload file to remote release
